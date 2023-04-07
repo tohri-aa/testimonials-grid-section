@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --vdark-grayish-blue: hsl(217, 19%, 35%);
+    --vdark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    --font-family: 'Barlow Semi Condensed', sans-serif;
+    
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background-color: var(--light-grayish-blue);
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: var(--font-family);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+p {
+    padding-top: 0.8em;
+}
+
+.card-one {
+    background: var(--moderate-violet);
+}
+
+.card-two {
+    background: var(--vdark-grayish-blue);
+}
+
+.card-three,
+.card-five {
+    background: var(--white);
+}
+
+.card-four {
+    background: var(--vdark-blackish-blue);
+}
+
+.text-primary {
+    color: var(--white);
+}
+
+.text-secondary {
+    color: var(--vdark-grayish-blue);
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.testimonial {
+    font-size: var(--fs-500);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem var(--vdark-grayish-blue) / 0.25;
+}
+
+.testimonial-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    padding-block: 2rem;
+    margin-inline: auto;
+    width: min(95%, 70rem);
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+}
+
+.testimonial.quote {
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+}
+
+.testimonial img {
+    width: 1.75rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+
+.testimonial .name {
+    font-size: var(--fs-400);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.testimonial .position {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+}
+
+.testimonial > p:first-of-type {
+    font-size: var(--fs-500);
+    line-height: 1.2;
+}
+
+.testimonial > p:last-of-type {
+    opacity: 0.7;
+    font-size: var(--fs-400);
+}
+
+.testimonial:nth-child(1) {
+    grid-area: one;
+}
+
+.testimonial:nth-child(2) {
+    grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+    grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+    grid-area: four;
+}
+
+.testimonial:nth-child(5) {
+    grid-area: five;
+}
+
+@media screen and (min-width: 33em) {
+    .testimonial-grid {
+        grid-template-areas: 
+        'one one'
+        'two three'
+        'five five'
+        'four four';
+    }
+}
+
+@media screen and (min-width: 38em) {
+    .testimonial-grid {
+        grid-template-areas: 
+        'one one'
+        'two five'
+        'three five'
+        'four four';
+    }
+}
+
+@media screen and (min-width: 54em) {
+    .testimonial-grid {
+        grid-template-areas: 
+        'one one two'
+        'five five five'
+        'three four four';
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .testimonial-grid {
+        grid-template-areas: 
+        'one one two five'
+        'three four four five';
+    }
+}
+
+
+
+
+
+/* .grid-container{
+    display: grid;
+    gap: 16px;
+    grid-template-rows: repeat(5);
+    width: 328px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.daniel-card{
+background-color: var(--moderate-violet);
+background-image: url(../images/bg-pattern-quotation.svg);
+background-repeat: no-repeat;
+background-position: top right;
+padding: 32px;
+border-radius: 10px;
+}
+
+.header{
+    display: flex;
+}
+
+.header > img{
+    width: 40px;
+    border-width: 2px;
+    border-color: var(--light-gray);
+    border-style: solid;
+    border-radius: 50%; 
+    margin-right: 16px;
+}
+
+h4{
+    color: var(--light-gray);
+    padding: 16px 0px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+h5{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: var(--light-gray);
+}
+
+.p-50{
+    color: hsla(0, 0%, 81%, 50%);
+    text-transform: capitalize;
+}
+
+p{
+    color: hsla(0, 0%, 81%, 70%);
+    line-height: 20px;
+    padding-right: 12px;
+}
+
+.jonathan-card{
+background-color: var(--vdark-grayish-blue);
+background-position: top right;
+padding: 32px;
+border-radius: 10px;
+}
+
+.jeanette-card{
+background-color: var(--white);
+background-position: top right;
+padding: 32px;
+border-radius: 10px;
+}
+
+.jeanette-card h5{
+    color: hsla(217, 19%, 35%, 70%);
+}
+
+.jeanette-card .p-50{
+    color: hsla(217, 19%, 35%, 50%);
+}
+
+.jeanette-card p{
+     color: hsla(217, 19%, 35%, 50%);
+}
+
+.jeanette-card h4{
+    color: hsla(217, 19%, 35%, 70%);
+}
+
+.patrick-card{
+background-color: var(--vdark-blackish-blue);
+background-position: top right;
+padding: 32px;
+border-radius: 10px;
+}
+
+.kira-card{
+background-color: var(--white);
+background-position: top right;
+padding: 32px;
+border-radius: 10px;
+}
+
+.kira-card h5{
+    color: hsla(217, 19%, 35%, 70%);
+}
+
+.kira-card .p-50{
+    color: hsla(217, 19%, 35%, 50%);
+}
+
+.kira-card p{
+     color: hsla(217, 19%, 35%, 50%);
+}
+
+.kira-card h4{
+    color: hsla(217, 19%, 35%, 70%);
+}
+
+@media screen and (min-width: 768px) {
+    .grid-container{
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 312px 312px;
+        margin-top: 40px;
+        margin-left: 200px;
+        margin-right: 40px;
+        
+    }
+
+    .daniel-card{
+        grid-column: 1 / 4;
+    }
+
+    .jonathan-card{
+        grid-column:  / ;
+    }
+
+    .kira-card{
+        
+    }
+}
+ */
